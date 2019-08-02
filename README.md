@@ -2,6 +2,7 @@ PyCard
 =
 
 TODO:
-[ ] Deck Class Completion
 
-[ ] Button Class Completion
+- [ ] Deck Class Completion
+
+- [ ] Button Class Completion

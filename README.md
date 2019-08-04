@@ -1,6 +1,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/0xmmalik/pycard/badge)](https://www.codefactor.io/repository/github/0xmmalik/pycard)
 [![Build Status](https://travis-ci.com/0xmmalik/pycard.svg?branch=master)](https://travis-ci.com/0xmmalik/pycard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#License)
+[![Coverage Status](https://coveralls.io/repos/github/0xmmalik/pycard/badge.svg?branch=master)](https://coveralls.io/github/0xmmalik/pycard?branch=master)
 
 PyCard
 =

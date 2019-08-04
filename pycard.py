@@ -16,12 +16,13 @@ class Deck:
                  values=None,
                  text=None,
                  prFormat="DECKTXT of DECKMOD",
-                 ):
-        if values is None:
+                 arr=None):
+        """Deck(modifiers, values, text, prFormat) or Deck(prFormat, arr) Defaults: modifiers = [Hearts, Diamonds, Spades, Clubs] | values = [1, 2, ... 12, 13] | text = ["Ace", "Two", ... "Twelve", "Thirteen"] | prFormat = "DECKTXT of DECKMOD" """
+        if values is None and arr is None:
             values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-        if modifiers is None:
+        if modifiers is None and arr is None:
             modifiers = ["Hearts", "Diamonds", "Spades", "Clubs"]
-        if text is None:
+        if text is None and arr is None:
             text = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen",
                     "King"]
         self.cards = []
@@ -41,10 +42,6 @@ class Deck:
                 print(delimiter, end='')
             else:
                 print("", end=endlist)
-
-    def printSingleStr(self, index):
-        card = self.cards[index]
-        print(self.format.replace("DECKTXT", card[1]).replace("DECKMOD", card[2]).replace("DECKVAL", str(card[0])))
 
     def getSingleStr(self, index):
         card = self.cards[index]

@@ -1,6 +1,4 @@
-# Security Policy
-
-## Reporting a Vulnerability
+# Reporting a Security Concern
 
 ### Option 1: Draft a New Advisory
 Go over to the **Security** tab at the top.

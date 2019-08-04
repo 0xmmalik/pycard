@@ -5,13 +5,13 @@
 PyCard
 =
 
-###TODO
+### TODO
 
 - [ ] Deck Class Completion
 
 - [ ] Button Class Completion
 
-###License
+### License
 
 Copyright 2019 Manav Malik
 

@@ -18,6 +18,7 @@ class Deck:
                  prFormat="DECKTXT of DECKMOD",
                  arr=None):
         """Deck(modifiers, values, text, prFormat) or Deck(prFormat, arr) Defaults: modifiers = [Hearts, Diamonds, Spades, Clubs] | values = [1, 2, ... 12, 13] | text = ["Ace", "Two", ... "Twelve", "Thirteen"] | prFormat = "DECKTXT of DECKMOD" """
+        self.cards = []
         if values is None and arr is None:
             values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
         if modifiers is None and arr is None:
@@ -25,7 +26,10 @@ class Deck:
         if text is None and arr is None:
             text = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen",
                     "King"]
-        self.cards = []
+        elif text is None and values is None and modifiers is None and arr is not None:
+            self.cards = arr
+        else:
+            print("Something went wrong... Please check the code and try again!")
         self.format = prFormat
         self.hands = []
         self.unused = self.cards
@@ -48,12 +52,19 @@ class Deck:
         return self.format.replace("DECKTXT", card[1]).replace("DECKMOD", card[2]).replace("DECKVAL", str(card[0]))
 
     def getSingleUnused(self, index):
-        # TODO: implement
-        pass
+        return self.unused[index]
 
-    def shuffleUnused(self, index):
-        # TODO: implement
-        pass
+    def shuffleUnused(self):
+        shuffle(self.unused)
+
+    def initPlayers(self, numPlayers):
+        for i in range(numPlayers):
+            self.hands.append([])
+
+    def deal(self, numPlayers, numCards):
+        for i in range(numPlayers):
+            for j in range(numCards):
+                self.hands[i].append(self.getSingleUnused(0))
 
 
 '''

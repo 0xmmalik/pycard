@@ -8,6 +8,8 @@ PyCard
 
 ### TODO
 
+- [x] License Project
+
 - [ ] Deck Class Completion
 
 - [ ] Button Class Completion

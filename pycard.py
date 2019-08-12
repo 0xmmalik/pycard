@@ -31,7 +31,7 @@ class Deck:
         self.format = prFormat
         self.hands = []
         self.unused = self.cards
-        if modifiers is None and text is None and values is None:
+        if arr is None:
             for i in range(len(values)):
                 for modifier in modifiers:
                     self.cards.append((values[i], text[i], modifier))

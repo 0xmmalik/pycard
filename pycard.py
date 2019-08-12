@@ -26,16 +26,15 @@ class Deck:
         if text is None and arr is None:
             text = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen",
                     "King"]
-        elif text is None and values is None and modifiers is None and arr is not None:
+        if text is None and values is None and modifiers is None and arr is not None:
             self.cards = arr
-        else:
-            print("Something went wrong... Please check the code and try again!")
         self.format = prFormat
         self.hands = []
         self.unused = self.cards
-        for i in range(len(values)):
-            for modifier in modifiers:
-                self.cards.append((values[i], text[i], modifier))
+        if modifiers is None and text is None and values is None:
+            for i in range(len(values)):
+                for modifier in modifiers:
+                    self.cards.append((values[i], text[i], modifier))
 
     def printCardsStr(self, delimiter=", ", endlist='\n'):
         for i in range(len(self.cards)):
@@ -66,12 +65,38 @@ class Deck:
             for j in range(numCards):
                 self.hands[i].append(self.getSingleUnused(0))
 
+    def compareVal(self, card1, card2):
+        if card1[0] == card2[0]:
+            return 0
+        if card1[0] < card2[0]:
+            return -1
+        return 1
+
+    def compareModifier(self, card1, card2):
+        if card1[2] == card2[2]:
+            return True
+        else:
+            return False
+
+################
+# BUTTON CLASS #
+################
+class Button:
+    def __init__(self, size, position, image, screen):
+        self.sz = size
+        self.pos = position
+
+    def getPos(self):
+        return self.pos;
+
+    def getSize(self):
+        return self.sz
 
 '''
 TABLE OF CONTENTS:
 
 Import Statements ........................ Line 5
 Deck Class ............................... Line 11
-Button Class .............................. Line #
+Button Class .............................. Line 81
 
 '''

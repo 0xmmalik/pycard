@@ -82,12 +82,12 @@ class Deck:
 # BUTTON CLASS #
 ################
 class Button:
-    def __init__(self, size, position, image, screen):
+    def __init__(self, size, position, pyg_screen):
         self.sz = size
         self.pos = position
 
     def getPos(self):
-        return self.pos;
+        return self.pos
 
     def getSize(self):
         return self.sz
